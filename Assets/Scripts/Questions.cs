@@ -18,16 +18,18 @@ public class Questions : MonoBehaviour
     public static string newAnswerC;
     public static string newAnswerD;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(PushQuestions());
-    }
+    public static bool updateQuestions = false;
+
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(updateQuestions == false)
+        {
+            updateQuestions = true;
+            StartCoroutine(PushQuestions());
+        }
     }
 
     IEnumerator PushQuestions()
