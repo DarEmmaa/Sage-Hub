@@ -21,7 +21,7 @@ public class WaterReaction : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Oxygen"))
         {
@@ -30,6 +30,11 @@ public class WaterReaction : MonoBehaviour
         }
 
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        water.SetActive(false);
     }
 
 }
