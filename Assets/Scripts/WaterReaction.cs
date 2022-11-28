@@ -26,7 +26,7 @@ public class WaterReaction : MonoBehaviour
         if (other.gameObject.CompareTag("Oxygen"))
         {
             water.SetActive(true);
-            waterSound.Play();
+            
         }
 
 
@@ -37,4 +37,19 @@ public class WaterReaction : MonoBehaviour
         water.SetActive(false);
     }
 
+    public void PlaySound()
+    {
+        if (water.activeSelf)
+        {
+            waterSound.Play();
+        }
+
+        if (!water.activeSelf)
+        {
+            waterSound.Stop();
+        }
+    }
+
 }
+
+
