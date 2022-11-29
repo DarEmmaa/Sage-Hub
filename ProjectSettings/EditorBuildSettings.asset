@@ -6,9 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ARLab.unity
+    guid: 0bbcf043dd49ae9429b160c0beba0712
+  - enabled: 1
     path: Assets/Scenes/Quiz.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/ARQuiz.unity
     guid: 377db016e073dd3498b8615017cc10ca
-  m_configObjects: {}
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cdc543db9b1b18744b1e054f8b70ccea,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 88543af2a7bf5ed43a012da3b5a52c68,
+      type: 2}
