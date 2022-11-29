@@ -9,6 +9,7 @@ public class WaterReaction : MonoBehaviour
     /*[SerializeField] GameObject oxygen;
     [SerializeField] GameObject hydrogen;*/
     [SerializeField] AudioSource waterSound;
+    [SerializeField] AudioClip waterClip;
 
 
     // Start is called before the first frame update
@@ -23,14 +24,16 @@ public class WaterReaction : MonoBehaviour
 
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Oxygen"))
         {
             water.SetActive(true);
+            waterSound.clip = waterClip;
+            waterSound.Play();
             /*hydrogen.SetActive(false);
             oxygen.SetActive(false);*/
-            
+
         }
 
 
@@ -43,7 +46,7 @@ public class WaterReaction : MonoBehaviour
         oxygen.SetActive(true);*/
     }
 
-    public void PlaySound()
+   /* public void PlaySound()
     {
         if (water.activeSelf)
         {
@@ -54,7 +57,7 @@ public class WaterReaction : MonoBehaviour
         {
             waterSound.Stop();
         }
-    }
+    }*/
 
 }
 

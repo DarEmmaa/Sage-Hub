@@ -7,7 +7,7 @@ public class ChemicalReactions : MonoBehaviour
 
     [SerializeField] GameObject carbonResult;
     //[SerializeField] GameObject carbon;
-    
+    [SerializeField] AudioClip carbonClip;
     [SerializeField] AudioSource carbonSound;
     
 
@@ -21,17 +21,19 @@ public class ChemicalReactions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Carbon"))
         {
             carbonResult.SetActive(true);
-            
-            
-            
+            carbonSound.clip = carbonClip;
+            carbonSound.Play();
+
+
+
         }
 
 
@@ -42,22 +44,27 @@ public class ChemicalReactions : MonoBehaviour
         if (other.gameObject.CompareTag("Carbon"))
         {
             carbonResult.SetActive(false);
-            //carbon.SetActive(true);
-           
-            
+            carbonSound.clip = carbonClip;
+            carbonSound.Stop();
+
+
         }
     }
 
-    public void PlaySound()
+    /*public void PlaySound()
     {
         if (carbonResult.activeSelf)
         {
+            carbonSound.clip = carbonClip;
             carbonSound.Play();
+            Debug.Log("i am playing");
         }
 
         if (!carbonResult.activeSelf)
         {
+            
             carbonSound.Stop();
+            Debug.Log("i am not playing");
         }
-    }
+    }*/
 }

@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Onboarding.unity
+    guid: b58e301a1b4b7e84399e99f24e33055f
+  - enabled: 1
     path: Assets/Scenes/ARLab.unity
     guid: 0bbcf043dd49ae9429b160c0beba0712
+  - enabled: 1
+    path: Assets/Scenes/ARLibrary.unity
+    guid: 8d87677e1bc0d5f4dbeb075c13d06d42
   - enabled: 1
     path: Assets/Scenes/Quiz.unity
     guid: 99c9720ab356a0642a771bea13969a05

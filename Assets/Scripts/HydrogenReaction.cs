@@ -5,7 +5,7 @@ using UnityEngine;
 public class HydrogenReaction : MonoBehaviour
 {
     [SerializeField] GameObject sun;
-    
+    [SerializeField] AudioClip sunClip;
     [SerializeField] AudioSource sunSound;
 
 
@@ -18,17 +18,19 @@ public class HydrogenReaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Hydrogen"))
         {
 
             sun.SetActive(true);
-           
-            
+            sunSound.clip = sunClip;
+            sunSound.Play();
+
+
         }
 
 
@@ -46,7 +48,7 @@ public class HydrogenReaction : MonoBehaviour
     }
 
 
-    public void PlaySound()
+   /* public void PlaySound()
     {
         if (sun.activeSelf)
         {
@@ -57,5 +59,5 @@ public class HydrogenReaction : MonoBehaviour
         {
             sunSound.Stop();
         }
-    }
+    }*/
 }

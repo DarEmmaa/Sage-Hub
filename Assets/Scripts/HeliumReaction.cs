@@ -8,6 +8,7 @@ public class HeliumReaction : MonoBehaviour
     [SerializeField] GameObject heliumResult;
     //[SerializeField] GameObject helium;
     [SerializeField] AudioSource heliumSound;
+    [SerializeField] AudioClip heliumClip;
 
 
     // Start is called before the first frame update
@@ -22,15 +23,17 @@ public class HeliumReaction : MonoBehaviour
 
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Helium"))
         {
 
             heliumResult.SetActive(true);
-           // helium.SetActive(false);
+            heliumSound.clip = heliumClip;
+            heliumSound.Play();
+            // helium.SetActive(false);
 
-            
+
         }
 
 
@@ -48,7 +51,7 @@ public class HeliumReaction : MonoBehaviour
     }
 
 
-    public void PlaySound()
+    /*public void PlaySound()
     {
         if (heliumResult.activeSelf)
         {
@@ -59,5 +62,5 @@ public class HeliumReaction : MonoBehaviour
         {
             heliumSound.Stop();
         }
-    }
+    }*/
 }

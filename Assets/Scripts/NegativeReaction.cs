@@ -8,6 +8,7 @@ public class NegativeReaction : MonoBehaviour
     [SerializeField] TMP_Text errorReaction;
 
     [SerializeField] AudioSource errorSound;
+    //[SerializeField] AudioClip errorClip;
 
 
     // Start is called before the first frame update
