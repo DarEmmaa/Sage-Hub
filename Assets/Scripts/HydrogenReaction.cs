@@ -5,6 +5,7 @@ using UnityEngine;
 public class HydrogenReaction : MonoBehaviour
 {
     [SerializeField] GameObject sun;
+    
     [SerializeField] AudioSource sunSound;
 
 
@@ -26,7 +27,8 @@ public class HydrogenReaction : MonoBehaviour
         {
 
             sun.SetActive(true);
-            sunSound.Play();
+           
+            
         }
 
 
@@ -34,10 +36,25 @@ public class HydrogenReaction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Helium"))
+        if (other.gameObject.CompareTag("Hydrogen"))
         {
 
             sun.SetActive(false);
+            
+            
+        }
+    }
+
+
+    public void PlaySound()
+    {
+        if (sun.activeSelf)
+        {
+            sunSound.Play();
+        }
+
+        if (!sun.activeSelf)
+        {
             sunSound.Stop();
         }
     }

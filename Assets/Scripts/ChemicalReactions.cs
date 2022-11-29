@@ -6,6 +6,7 @@ public class ChemicalReactions : MonoBehaviour
 {
 
     [SerializeField] GameObject carbonResult;
+    //[SerializeField] GameObject carbon;
     
     [SerializeField] AudioSource carbonSound;
     
@@ -28,7 +29,8 @@ public class ChemicalReactions : MonoBehaviour
         if (other.gameObject.CompareTag("Carbon"))
         {
             carbonResult.SetActive(true);
-            carbonSound.Play();
+            
+            
             
         }
 
@@ -40,8 +42,22 @@ public class ChemicalReactions : MonoBehaviour
         if (other.gameObject.CompareTag("Carbon"))
         {
             carbonResult.SetActive(false);
-            carbonSound.Stop();
+            //carbon.SetActive(true);
+           
             
+        }
+    }
+
+    public void PlaySound()
+    {
+        if (carbonResult.activeSelf)
+        {
+            carbonSound.Play();
+        }
+
+        if (!carbonResult.activeSelf)
+        {
+            carbonSound.Stop();
         }
     }
 }

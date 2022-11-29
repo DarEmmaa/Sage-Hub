@@ -6,6 +6,7 @@ public class HeliumReaction : MonoBehaviour
 {
     
     [SerializeField] GameObject heliumResult;
+    //[SerializeField] GameObject helium;
     [SerializeField] AudioSource heliumSound;
 
 
@@ -27,7 +28,9 @@ public class HeliumReaction : MonoBehaviour
         {
 
             heliumResult.SetActive(true);
-            heliumSound.Play();
+           // helium.SetActive(false);
+
+            
         }
 
 
@@ -39,6 +42,21 @@ public class HeliumReaction : MonoBehaviour
         {
 
             heliumResult.SetActive(false);
+            //helium.SetActive(true);
+            
+        }
+    }
+
+
+    public void PlaySound()
+    {
+        if (heliumResult.activeSelf)
+        {
+            heliumSound.Play();
+        }
+
+        if (!heliumResult.activeSelf)
+        {
             heliumSound.Stop();
         }
     }

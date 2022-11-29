@@ -6,6 +6,8 @@ public class WaterReaction : MonoBehaviour
 {
 
     [SerializeField] GameObject water;
+    /*[SerializeField] GameObject oxygen;
+    [SerializeField] GameObject hydrogen;*/
     [SerializeField] AudioSource waterSound;
 
 
@@ -26,6 +28,8 @@ public class WaterReaction : MonoBehaviour
         if (other.gameObject.CompareTag("Oxygen"))
         {
             water.SetActive(true);
+            /*hydrogen.SetActive(false);
+            oxygen.SetActive(false);*/
             
         }
 
@@ -35,6 +39,8 @@ public class WaterReaction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         water.SetActive(false);
+        /*hydrogen.SetActive(true);
+        oxygen.SetActive(true);*/
     }
 
     public void PlaySound()
