@@ -5,7 +5,7 @@ using TMPro;
 
 public class NegativeReaction : MonoBehaviour
 {
-    [SerializeField] TMP_Text errorReaction;
+    
 
     [SerializeField] AudioSource errorSound;
     //[SerializeField] AudioClip errorClip;
@@ -27,7 +27,7 @@ public class NegativeReaction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hydrogen"))
         {
-            errorReaction.text = "Helium does not chemically bond with other elements";
+            
 
             errorSound.Play();
 
@@ -41,7 +41,7 @@ public class NegativeReaction : MonoBehaviour
         if (other.gameObject.CompareTag("Hydrogen"))
         {
 
-            errorReaction.text = "";
+            
             errorSound.Stop();
 
 
